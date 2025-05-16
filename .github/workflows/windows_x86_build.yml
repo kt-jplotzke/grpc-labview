@@ -19,9 +19,12 @@ jobs:
     - uses: ilammy/setup-nasm@v1.5.1
 
     - name: Install Visual Studio 2022 Build Tools
-      shell: pwsh
       run: |
-        choco install visualstudio2022-workload-vctools --yes --norestart
+        choco install visualstudio2022buildtools --version 117.13.6
+    
+    - name: Install Visual Studio 2022 VC Tools
+      run: |
+        choco install visualstudio2022-workload-vctools --yes
 
     - name: Update Submodules
       working-directory: ${{runner.workspace}}/grpc-labview      
