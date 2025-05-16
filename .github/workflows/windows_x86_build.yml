@@ -21,7 +21,7 @@ jobs:
     - name: Install Visual Studio 2022 Build Tools
       shell: pwsh
       run: |
-        choco install visualstudio2022-workload-vctools --yes --noreboot
+        choco install visualstudio2022-workload-vctools --yes --norestart
 
     - name: Update Submodules
       working-directory: ${{runner.workspace}}/grpc-labview      
